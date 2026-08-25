@@ -15,9 +15,26 @@ int main(int argc, char *argv[]) {
 	maior = ((maior_temp+c)+abs(maior_temp-c))/2;
 	
 	printf("O maior entre |%d|%d|%d| = %d", a,b,c, maior);
+		
+	return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	int n, r;
+	printf("Insira o valor: ");
+	scanf("%d", &n);
 	
-	
-	
+	if(n>0){
+		r = n*-1;
+	}else{
+		r = n*n;
+	}
+	printf("%d",r);
 	
 	return 0;
 }
