@@ -1,0 +1,412 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+    int sel_prova, sel_questao;
+
+    printf("--- MENU DE PROVAS ---\n");
+    printf("[1] ESOFT (Manha - Turma A)\n");
+    printf("[2] ESOFT (Manha - Turma B)\n");
+    printf("[3] ADS (Noite)\n");
+    printf("Escolha a prova: ");
+    scanf("%d", &sel_prova);
+
+    printf("\n--- MENU DE QUESTOES ---\n");
+    printf("[0] Questao 0\n");
+    printf("[1] Questao 1\n");
+    printf("[2] Questao 2\n");
+    printf("Escolha a questao: ");
+    scanf("%d", &sel_questao);
+
+    switch (sel_prova) {
+        case 1:
+            switch (sel_questao) {
+                case 0: {
+                    int num1, num2, num3, num4;
+
+                    printf("\n------------------------------------------------------\n");
+                    printf("ENUNCIADO - ESOFT MANHA (TURMA A) - Q0:\n");
+                    printf("Faca um programa que receba 4 numeros inteiros do teclado,\n");
+                    printf("verifique quais dos numeros inseridos sao impares, e mostre\n");
+                    printf("os que forem multiplos de 5.\n");
+                    printf("------------------------------------------------------\n\n");
+
+                    printf("EXECUCAO:\n");
+                    printf("Informe quatro valores inteiros: ");
+                    scanf("%d %d %d %d", &num1, &num2, &num3, &num4);
+
+                    printf("Valores impares e multiplos de 5:\n");
+                    if (num1 % 2 == 1 || num1 % 2 == -1) {
+                        if (num1 % 5 == 0) {
+                            printf("%d\n", num1);
+                        }
+                    }
+                    if (num2 % 2 == 1 || num2 % 2 == -1) {
+                        if (num2 % 5 == 0) {
+                            printf("%d\n", num2);
+                        }
+                    }
+                    if (num3 % 2 == 1 || num3 % 2 == -1) {
+                        if (num3 % 5 == 0) {
+                            printf("%d\n", num3);
+                        }
+                    }
+                    if (num4 % 2 == 1 || num4 % 2 == -1) {
+                        if (num4 % 5 == 0) {
+                            printf("%d\n", num4);
+                        }
+                    }
+                    break;
+                }
+                case 1: {
+                    int cap, total, mochilas, sobrou;
+
+                    printf("\n------------------------------------------------------\n");
+                    printf("ENUNCIADO - ESOFT MANHA (TURMA A) - Q1:\n");
+                    printf("Um legendario precisa organizar seus equipamentos para uma viagem\n");
+                    printf("utilizando mochilas de capacidade identica. Dada a quantidade total\n");
+                    printf("de itens e a capacidade maxima de cada mochila, informe ao\n");
+                    printf("legendario o numero de mochilas totalmente preenchidas.\n");
+                    printf("------------------------------------------------------\n\n");
+
+                    printf("EXECUCAO:\n");
+                    printf("Insira a quantidade de itens a serem dispostos nas mochilas: \n");
+                    scanf("%d", &total);
+                    printf("Insira a capacidade de itens de cada mochila: \n");
+                    scanf("%d", &cap);
+
+                    if (cap > 0) {
+                        mochilas = total / cap;
+                        sobrou = total % cap;
+                        printf("Legendario, sao %d mochilas para seus itens, e sobram %d itens", mochilas, sobrou);
+                    } else {
+                        printf("Capacidade invalida\n");
+                    }
+                    break;
+                }
+                case 2: {
+                    float val, res;
+                    int cod;
+
+                    printf("\n------------------------------------------------------\n");
+                    printf("ENUNCIADO - ESOFT MANHA (TURMA A) - Q2:\n");
+                    printf("Crie um programa onde sejam inseridos o valor a ser convertido e\n");
+                    printf("o codigo da unidade de medida de conversao. Converta e exiba o valor.\n");
+                    printf("------------------------------------------------------\n\n");
+
+                    printf("EXECUCAO:\n");
+                    printf("Digite o valor para conversao: ");
+                    scanf("%f", &val);
+                    printf("Digite o codigo (1 a 11): ");
+                    scanf("%d", &cod);
+
+                    switch (cod) {
+                        case 1:
+                            res = val * 1.8 + 32;
+                            printf("%.2f C = %.2f F\n", val, res);
+                            break;
+                        case 2:
+                            res = (val - 32) / 1.8;
+                            printf("%.2f F = %.2f C\n", val, res);
+                            break;
+                        case 3:
+                            res = val + 273.15;
+                            printf("%.2f C = %.2f K\n", val, res);
+                            break;
+                        case 4:
+                            res = val - 273.15;
+                            printf("%.2f K = %.2f C\n", val, res);
+                            break;
+                        case 5:
+                            res = val / 1609.34;
+                            printf("%.2f m = %.6f mi\n", val, res);
+                            break;
+                        case 6:
+                            res = val * 1609.34;
+                            printf("%.2f mi = %.2f m\n", val, res);
+                            break;
+                        case 8:
+                            res = val * 2.205;
+                            printf("%.2f kg = %.2f lb\n", val, res);
+                            break;
+                        case 9:
+                            res = val / 2.205;
+                            printf("%.2f lb = %.2f kg\n", val, res);
+                            break;
+                        case 10:
+                            res = val / 1.609;
+                            printf("%.2f km/h = %.2f mph\n", val, res);
+                            break;
+                        case 11:
+                            res = val * 1.609;
+                            printf("%.2f mph = %.2f km/h\n", val, res);
+                            break;
+                        default:
+                            printf("Erro: Codigo invalido\n");
+                            break;
+                    }
+                    break;
+                }
+                default:
+                    printf("Opcao de questao nao existe\n");
+                    break;
+            }
+            break;
+
+        case 2:
+            switch (sel_questao) {
+                case 0: {
+                    int cap, total, mochilas, sobrou;
+
+                    printf("\n------------------------------------------------------\n");
+                    printf("ENUNCIADO - ESOFT MANHA (TURMA B) - Q0:\n");
+                    printf("Um legendario precisa organizar seus equipamentos para uma viagem\n");
+                    printf("utilizando mochilas de capacidade identica. Dada a quantidade total\n");
+                    printf("de itens e a capacidade maxima de cada mochila, informe o numero\n");
+                    printf("de mochilas preenchidas e a quantidade de itens que sobram.\n");
+                    printf("------------------------------------------------------\n\n");
+
+                    printf("EXECUCAO:\n");
+                    printf("Insira a quantidade de itens a serem dispostos nas mochilas: \n");
+                    scanf("%d", &total);
+                    printf("Insira a capacidade de itens de cada mochila: \n");
+                    scanf("%d", &cap);
+
+                    if (cap > 0) {
+                        mochilas = total / cap;
+                        sobrou = total % cap;
+                        printf("Legendario, sao %d mochilas para seus itens, e sobram %d itnes", mochilas, sobrou);
+                    } else {
+                        printf("Capacidade invalida\n");
+                    }
+                    break;
+                }
+                case 1: {
+                    int v_a, v_b, v_c, temp;
+
+                    printf("\n------------------------------------------------------\n");
+                    printf("ENUNCIADO - ESOFT MANHA (TURMA B) - Q1:\n");
+                    printf("Faca um programa que receba tres numeros inteiros a, b e c.\n");
+                    printf("Se algum for igual a outro, imprima 'os numeros tem que ser distintos'.\n");
+                    printf("Caso contrario, imprima eles em uma mesma linha em ordem crescente.\n");
+                    printf("------------------------------------------------------\n\n");
+
+                    printf("EXECUCAO:\n");
+                    printf("Informe tres numeros inteiros: ");
+                    scanf("%d %d %d", &v_a, &v_b, &v_c);
+
+                    if (v_a == v_b || v_a == v_c || v_b == v_c) {
+                        printf("os numeros tem que ser distintos\n");
+                    } else {
+                        if (v_a > v_b) {
+                            temp = v_a;
+                            v_a = v_b;
+                            v_b = temp;
+                        }
+                        if (v_a > v_c) {
+                            temp = v_a;
+                            v_a = v_c;
+                            v_c = temp;
+                        }
+                        if (v_b > v_c) {
+                            temp = v_b;
+                            v_b = v_c;
+                            v_c = temp;
+                        }
+                        printf("Ordem crescente: %d %d %d\n", v_a, v_b, v_c);
+                    }
+                    break;
+                }
+                case 2: {
+                    float valor1, valor2;
+                    int operacao;
+
+                    printf("\n------------------------------------------------------\n");
+                    printf("ENUNCIADO - ESOFT MANHA (TURMA B) - Q2:\n");
+                    printf("Receba dois operandos numericos e um codigo identificador\n");
+                    printf("da operacao relacional (1:>, 2:<, 3:==, 4:!=) e informe\n");
+                    printf("se a condicao e Verdadeira ou Falsa.\n");
+                    printf("------------------------------------------------------\n\n");
+
+                    printf("EXECUCAO:\n");
+                    printf("Informe o primeiro valor: ");
+                    scanf("%f", &valor1);
+                    printf("Informe o segundo valor: ");
+                    scanf("%f", &valor2);
+                    printf("Informe o codigo da operacao (1-4): ");
+                    scanf("%d", &operacao);
+
+                    switch (operacao) {
+                        case 1:
+                            if (valor1 > valor2) {
+                                printf("Verdadeiro\n");
+                            } else {
+                                printf("Falso\n");
+                            }
+                            break;
+                        case 2:
+                            if (valor1 < valor2) {
+                                printf("Verdadeiro\n");
+                            } else {
+                                printf("Falso\n");
+                            }
+                            break;
+                        case 3:
+                            if (valor1 == valor2) {
+                                printf("Verdadeiro\n");
+                            } else {
+                                printf("Falso\n");
+                            }
+                            break;
+                        case 4:
+                            if (valor1 == valor2) {
+                                printf("Falso\n");
+                            } else {
+                                printf("Verdadeiro\n");
+                            }
+                            break;
+                        default:
+                            printf("operador invalido\n");
+                            break;
+                    }
+                    break;
+                }
+                default:
+                    printf("Opcao de questao nao existe\n");
+                    break;
+            }
+            break;
+
+        case 3:
+            switch (sel_questao) {
+                case 0: {
+                    int x1, x2, x3, x4, x5;
+                    int achou;
+
+                    achou = 0;
+
+                    printf("\n------------------------------------------------------\n");
+                    printf("ENUNCIADO - ADS NOITE - Q0:\n");
+                    printf("Faca um programa que receba 5 numeros inteiros do teclado,\n");
+                    printf("verifique se em algum deles sao numeros consecutivos, e mostre\n");
+                    printf("os valores que estao em ordem consecutiva.\n");
+                    printf("------------------------------------------------------\n\n");
+
+                    printf("EXECUCAO:\n");
+                    printf("Informe 5 valores inteiros: ");
+                    scanf("%d %d %d %d %d", &x1, &x2, &x3, &x4, &x5);
+
+                    printf("Pares consecutivos encontrados:\n");
+                    if (x2 == x1 + 1) {
+                        printf("%d e %d\n", x1, x2);
+                        achou = 1;
+                    }
+                    if (x3 == x2 + 1) {
+                        printf("%d e %d\n", x2, x3);
+                        achou = 1;
+                    }
+                    if (x4 == x3 + 1) {
+                        printf("%d e %d\n", x3, x4);
+                        achou = 1;
+                    }
+                    if (x5 == x4 + 1) {
+                        printf("%d e %d\n", x4, x5);
+                        achou = 1;
+                    }
+
+                    if (achou == 0) {
+                        printf("Nenhum par consecutivo encontrado\n");
+                    }
+                    break;
+                }
+                case 1: {
+                    float p, alt, imc_res;
+
+                    printf("\n------------------------------------------------------\n");
+                    printf("ENUNCIADO - ADS NOITE - Q1:\n");
+                    printf("Calcule o IMC (peso / altura^2) a partir do peso (kg) e altura (m)\n");
+                    printf("informados pelo usuario, e exiba a classificacao correspondente.\n");
+                    printf("------------------------------------------------------\n\n");
+
+                    printf("EXECUCAO:\n");
+                    printf("Informe o peso: ");
+                    scanf("%f", &p);
+                    printf("Informe a altura: ");
+                    scanf("%f", &alt);
+
+                    imc_res = p / (alt * alt);
+                    printf("IMC: %.2f\n", imc_res);
+
+                    if (imc_res < 18.5) {
+                        printf("Abaixo do peso\n");
+                    } else if (imc_res <= 24.9) {
+                        printf("Normal\n");
+                    } else if (imc_res <= 29.9) {
+                        printf("Acima do peso\n");
+                    } else {
+                        printf("Obeso\n");
+                    }
+                    break;
+                }
+                case 2: {
+                    int pinoA, pinoB, pinoC;
+
+                    printf("\n------------------------------------------------------\n");
+                    printf("ENUNCIADO - ADS NOITE - Q2:\n");
+                    printf("Torres de Hanoi: Faca um programa que calcule e mostre as operacoes\n");
+                    printf("necessarias para resolver a Torre de Hanoi com 3 discos (A=6, B=0, C=0).\n");
+                    printf("------------------------------------------------------\n\n");
+
+                    printf("EXECUCAO:\n");
+                    pinoA = 6;
+                    pinoB = 0;
+                    pinoC = 0;
+
+                    printf("Inicio: A=%d, B=%d, C=%d\n\n", pinoA, pinoB, pinoC);
+
+                    pinoA = pinoA - 1;
+                    pinoC = pinoC + 1;
+                    printf("Mover disco 1 de A para C -> A=%d, B=%d, C=%d\n", pinoA, pinoB, pinoC);
+
+                    pinoA = pinoA - 2;
+                    pinoB = pinoB + 2;
+                    printf("Mover disco 2 de A para B -> A=%d, B=%d, C=%d\n", pinoA, pinoB, pinoC);
+
+                    pinoC = pinoC - 1;
+                    pinoB = pinoB + 1;
+                    printf("Mover disco 1 de C para B -> A=%d, B=%d, C=%d\n", pinoA, pinoB, pinoC);
+
+                    pinoA = pinoA - 3;
+                    pinoC = pinoC + 3;
+                    printf("Mover disco 3 de A para C -> A=%d, B=%d, C=%d\n", pinoA, pinoB, pinoC);
+
+                    pinoB = pinoB - 1;
+                    pinoA = pinoA + 1;
+                    printf("Mover disco 1 de B para A -> A=%d, B=%d, C=%d\n", pinoA, pinoB, pinoC);
+
+                    pinoB = pinoB - 2;
+                    pinoC = pinoC + 2;
+                    printf("Mover disco 2 de B para C -> A=%d, B=%d, C=%d\n", pinoA, pinoB, pinoC);
+
+                    pinoA = pinoA - 1;
+                    pinoC = pinoC + 1;
+                    printf("Mover disco 1 de A para C -> A=%d, B=%d, C=%d\n", pinoA, pinoB, pinoC);
+
+                    printf("\nFim: A=%d, B=%d, C=%d\n", pinoA, pinoB, pinoC);
+                    break;
+                }
+                default:
+                    printf("Opcao de questao nao existe\n");
+                    break;
+            }
+            break;
+
+        default:
+            printf("Opcao de prova invalida\n");
+            break;
+    }
+
+    return 0;
+}
